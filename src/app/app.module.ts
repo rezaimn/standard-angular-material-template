@@ -8,6 +8,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {HttpService} from './shared/services/http.service';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const createTranslateLoader = (http: HttpClient) => {
 
@@ -31,6 +32,7 @@ export const createTranslateLoader = (http: HttpClient) => {
       }
     }),
     NgxWebstorageModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [ HttpService],
   bootstrap: [AppComponent]
