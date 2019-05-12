@@ -1,0 +1,59 @@
+<div class="login-page">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <img src="assets/images/logo.png" width="125px" class="user-avatar" />
+            <h3>{{ 'auth.login' | translate }}</h3>
+            <form (ngSubmit)="onLogin()" [formGroup]="loginform"  novalidate>
+                <div class="form-content">
+                    <div
+                      class="form-group "
+                      [ngClass]="{
+                      'text-success': username.valid && (username.dirty || username.touched),
+                      'text-danger':  username.invalid && (username.dirty || username.touched)
+                        }">
+                        <input
+                          formControlName="username"
+                          name="username"
+                          type="text"
+                          class="form-control input-underline input-lg"
+                          id="username"
+                          placeholder="{{ 'auth.user-name' | translate }}">
+                          <br>
+
+                          <div
+                            class="form-control-feedback"
+                            *ngIf="username.invalid && (username.dirty || username.touched)">
+                            <p>{{ 'auth.user-name-message' | translate }}</p>
+                          </div>
+                    </div>
+
+                    <div class="form-group"
+                         [ngClass]="{
+                         'text-success': password.valid && (password.dirty || password.touched),
+                         'text-danger':  password.invalid && (password.dirty || password.touched)
+                        }">
+                        <input
+                          formControlName="password"
+                          name="password"
+                          type="password"
+                          class="form-control input-underline input-lg"
+                          id="password"
+                          placeholder="{{ 'auth.password' | translate }}">
+                          <br>
+                           <div
+                           class="form-control-feedback"
+                           *ngIf="password.errors && (password.dirty || password.touched)">
+                           <p *ngIf="f.password.errors.required">{{ 'auth.password-message-required' | translate }}</p>
+                           <p *ngIf="f.password.errors.minlength">{{ 'auth.password-message-length' | translate }}</p>
+                           </div>
+                      <br>
+                        <a [routerLink]="'/auth/forget-pass'" class="forgetLink"  >{{ 'auth.forget-password' | translate }}</a>
+                    </div>
+                </div>
+
+                <button class="btn  manage-button-dark loginBtn"  type="submit" [disabled]="loginform.invalid">{{ 'auth.login' | translate }}</button>
+                &nbsp;
+            </form>
+        </div>
+    </div>
+</div>

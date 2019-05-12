@@ -1,0 +1,32 @@
+
+.modal-body {
+  color: antiquewhite;
+  .account-header {
+    input {
+      float: left;
+    }
+  }
+  .col-12{
+    padding: 0;
+  }
+}
+.anyClass {
+  height:400px;
+  overflow-y: scroll;
+}
+
+.pad-button{
+  padding-top:12px ;
+}
+
+.pad-check{
+  padding-top:20px ;
+}
+
+label{
+  color: #f9961e!important;
+}
+
+input::placeholder {
+  color: whitesmoke;
+}

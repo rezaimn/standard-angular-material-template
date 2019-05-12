@@ -1,0 +1,39 @@
+<div class="page-header">
+  <h1 class="roleHead">{{ 'header.profile' | translate }}</h1>
+  <hr>
+</div>
+
+<div class="card mb-3">
+  <div class="card-header Account-header">{{'account.account-info' | translate }}
+  </div>
+<div class="card-body  account-label">
+  <div class="row">
+    <div class="col-6 form-group">
+      <label>{{ 'account.firstName' | translate }}</label>
+      <input class="form-control" [disabled]="true" placeholder="{{  accountData?.firstName }}">
+    </div>
+    <div class="col-6 form-group">
+      <label>{{ 'account.lastName' | translate }}</label>
+      <input class="form-control" [disabled]="true" placeholder="{{ accountData?.lastName }}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 form-group">
+      <label>{{ 'account.SNN' | translate }}</label>
+      <input class="form-control" [disabled]="true" placeholder="{{  accountData?.ssn }}">
+    </div>
+    <div class="col-6 form-group">
+      <label>{{ 'account.mobileNumber' | translate }}</label>
+      <input class="form-control" [disabled]="true" placeholder="{{  accountData?.mobileNumber }}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 form-group">
+      <label>{{ 'account.email' | translate }}</label>
+      <input class="form-control" [disabled]="true" placeholder="{{  accountData?.email }}">
+    </div>
+    <div class="col-6 form-group">
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,48 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+  <div class="list-group">
+    <a  *ngIf="userHasAccessToModule(3)" [routerLink]="['/layout/account-manager']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-user"></i>&nbsp;
+      <span>{{ 'side-bar.account-management' | translate }}</span>
+    </a>
+    <a *ngIf="userHasAccessToModule(4)" [routerLink]="['/layout/role-management']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-users"></i>&nbsp;
+      <span>{{ 'side-bar.role-management' | translate }}</span>
+    </a>
+    <a *ngIf="userHasAccessToModule(1)" [routerLink]="['/layout/appliance']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-television"></i>&nbsp;
+      <span>{{ 'side-bar.appliance-management' | translate }}</span>
+    </a>
+    <div class="nested-menu">
+      <a *ngIf="userHasAccessToModule(2)" class="list-group-item" (click)="addExpandClass('pages')">
+        <i class="fa fa-cogs"></i>&nbsp;
+        <span>{{ 'side-bar.setting' | translate }}</span>
+      </a>
+      <li class="nested" [class.expand]="showMenu === 'pages'">
+        <ul class="submenu">
+          <li>
+            <a  *ngIf="userHasAccessToScreen(2,2)" [routerLink]="['/layout/setting/types']" [routerLinkActive]="['router-link-active']"
+               class="list-group-item">
+              <i class="fa fa-television"></i>&nbsp;
+              <span>{{ 'side-bar.type-settings' | translate }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a *ngIf="userHasAccessToScreen(2,3)"  [routerLink]="['/layout/setting/role-setting']" [routerLinkActive]="['router-link-active']"
+               class="list-group-item">
+              <i class="fa fa-cog"></i>&nbsp;
+              <span>{{ 'side-bar.role-setting' | translate }}</span>
+            </a>
+          </li>
+
+        </ul>
+      </li>
+    </div>
+
+    <div class="header-fields">
+
+    </div>
+  </div>
+
+</nav>
+
